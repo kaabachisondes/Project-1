@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap CSS -->
+  <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="style.css" alt="">
+    <script src="script.js"> </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>PARA DS</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#"><h1>PARA DS</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+         
+          <!--Soins-->
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="Soins" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Soins
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="hommeDropdown">
+            <li><a class="dropdown-item" href="#">Corp</a></li>
+            <li><a class="dropdown-item" href="#">Visage</a></li>
+            <li><a class="dropdown-item" href="#">Cheveux</a></li>
+          </ul>
+        </li>
+
+          
+          <!--Maman&Bebe-->
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="Maman&BebeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Maman&Bebe
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="Maman&BebeDropdown">
+            <li><a class="dropdown-item" href="#">Toilette et soins de bébé</a></li>
+            <li><a class="dropdown-item" href="#">Trousse et cadeau bébé</a></li>
+            <li><a class="dropdown-item" href="#">Change de bébé</a></li>
+          </ul>
+        </li>
+          <!--Homme-->
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="hommeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Homme
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="hommeDropdown">
+             <li><a class="dropdown-item" href="produits.html?cat=homme">Tous les produits Homme</a></li>
+            <li><a class="dropdown-item" href="produits.html?cat=homme&tag=rassage">Rasage & Apré-rasage Homme</a></li>
+            <li><a class="dropdown-item" href="produits.html?cat=homme&tag=visage">Soins Visage</a></li>
+            <li><a class="dropdown-item" href="produits.html?cat=homme&tag=cheveux">Cheveux Homme</a></li>
+          </ul>
+        </li>
+
+         <!-- Hygiène -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="hygieneDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hygiène
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="hygieneDropdown">
+            <li><a class="dropdown-item" href="produits.html">Savon</a></li>
+            <li><a class="dropdown-item" href="#">Hygiène Intime</a></li>
+            <li><a class="dropdown-item" href="#">Soins & Bain</a></li>
+            <li><a class="dropdown-item" href="#">Soins buccodentaires</a></li>
+            <li><a class="dropdown-item" href="#">Déodorants et anti-transpirants</a></li>
+          
+
+          </ul>
+        </li>
+        
+
+          <!-- Chaussure Orthopedique -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="chaussureDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Chaussure Orthopedique
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="chaussureDropdown">
+            <li><a class="dropdown-item" href="#">Baskets</a></li>
+            <li><a class="dropdown-item" href="#">Sandales</a></li>
+            <li><a class="dropdown-item" href="#">Sabot</a></li>
+          </ul>
+        </li>
+          <!--Orthopedie-->
+          <li class="=nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="orthopedieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Orthopedie
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="orthopedieDropdown">
+                <li><a class="dropdown-item" href="#">produit medical</a></li>
+                <li><a class="dropdown-item" href="#">Prothése</a></li>
+            </ul>
+          </li>
+          <!-- Panier -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+              🛒 Panier (<span id="cart-count">0</span>)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Annonce avec Carousel -->
+  <section class="bg-light text-center p-5">
+    <div id="pubCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="annonce/a1.jpg" width="100%" height="350px"  class="d-block w-100" alt="Annonce 1">
+        </div>
+        <div class="carousel-item">
+          <img src="annonce/a2.jpg" width="100%" height="350px"  class="d-block w-100" alt="Annonce 2">
+        </div>
+        <div class="carousel-item">
+          <img src="annonce/a3.jpg" width="100%" height="350px"  class="d-block w-100" alt="Annonce 3">
+        </div>
+         <div class="carousel-item">
+          <img src="annonce/a4.jpg" width="100%" height="350px"  class="d-block w-100" alt="Annonce 3">
+        </div>
+         <div class="carousel-item">
+          <img src="annonce/a5.png" width="100%" height="350px"  class="d-block w-100" alt="Annonce 3">
+        </div>
+         <div class="carousel-item">
+          <img src="annonce/a6.jpg" width="100%" height="350px"  class="d-block w-100" alt="Annonce 3">
+        </div>
+         <div class="carousel-item">
+          <img src="annonce/a7.jpg" width="100%" height="350px"  class="d-block w-100" alt="Annonce 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#pubCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#pubCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Produits -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">🔥 Top Promo</h2>
+    <div class="row g-4">
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b1.jpg" class="card-img-top" style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 1</h5>
+            <p class="text-success fw-bold">25 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 1" data-price="25">Acheter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b2.jpg" class="card-img-top" style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 2</h5>
+            <p class="text-success fw-bold">39 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 2" data-price="39">Acheter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b3.jpg" class="card-img-top" style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 3</h5>
+            <p class="text-success fw-bold">19 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 3" data-price="19">Acheter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b4.jpg" class="card-img-top" style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 4">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 4</h5>
+            <p class="text-success fw-bold">29 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 4" data-price="29">Acheter</button>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b5.jpg" class="card-img-top" style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 5">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 5</h5>
+            <p class="text-success fw-bold">25 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 5" data-price="25">Acheter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b6.jpg"  class="card-img-top" style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 6">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 6</h5>
+            <p class="text-success fw-bold">39 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 6" data-price="39">Acheter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b7.jpg" class="card-img-top" style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 7">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 7</h5>
+            <p class="text-success fw-bold">19 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 7" data-price="19">Acheter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b8.jpg" class="card-img-top" style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 8">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 8</h5>
+            <p class="text-success fw-bold">29 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 8" data-price="29">Acheter</button>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b9.jpg" class="card-img-top" style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 9">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 9</h5>
+            <p class="text-success fw-bold">25 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 9" data-price="25">Acheter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b10.jpg" class="card-img-top"style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 10">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 10</h5>
+            <p class="text-success fw-bold">39 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 10" data-price="39">Acheter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b11.jpg" class="card-img-top" style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 11">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 11</h5>
+            <p class="text-success fw-bold">19 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 11" data-price="19">Acheter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="prod/b12.jpg" class="card-img-top"style="width: 100% ;height:200px;object-fit: cover;" alt="Produit 12">
+          <div class="card-body text-center">
+            <h5 class="card-title">Produit 12</h5>
+            <p class="text-success fw-bold">29 DT</p>
+            <button class="btn btn-primary add-to-cart" data-name="Produit 12" data-price="29">Acheter</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modal Panier -->
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">🛒 Votre Panier</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="cart-items">
+              <tr><td colspan="3" class="text-center">Votre panier est vide.</td></tr>
+            </tbody>
+          </table>
+          <h5 class="text-end">Total: <span id="cart-total">0</span> DT</h5>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success">Valider la commande</button>
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center p-4">
+    <p>Suivez-nous :</p>
+    <a href="https://www.facebook.com/" class="text-white me-3">Facebook</a>
+    <a href="https://www.tiktok.com/explore" class="text-white me-3">TikTok</a>
+    <a href="https://www.instagram.com/" class="text-white">Instagram</a>
+    <footer >© 2025 PARA DS</footer>
+  </footer>
+
+  <!-- Bootstrap + JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let cart = [];
+    const cartCount = document.getElementById("cart-count");
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+
+    function updateCart() {
+      cartItems.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<tr><td colspan="3" class="text-center">Votre panier est vide.</td></tr>';
+      } else {
+        cart.forEach((item, index) => {
+          total += item.price;
+          let row = `
+            <tr>
+              <td>${item.name}</td>
+              <td>${item.price} DT</td>
+              <td><button class="btn btn-danger btn-sm remove-item" data-index="${index}">X</button></td>
+            </tr>`;
+          cartItems.innerHTML += row;
+        });
+      }
+
+      cartTotal.textContent = total;
+      cartCount.textContent = cart.length;
+
+      // supprimer produit
+      document.querySelectorAll(".remove-item").forEach(btn => {
+        btn.addEventListener("click", () => {
+          let i = btn.dataset.index;
+          cart.splice(i, 1);
+          updateCart();
+        });
+      });
+    }
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.dataset.name;
+        const price = parseFloat(button.dataset.price);
+        cart.push({name, price});
+        updateCart();
+      });
+    });
+  </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+    
+</body>
+</html>

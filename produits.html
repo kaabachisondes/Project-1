@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produits – PARA DS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    
+    .card-img-top{width:100%;height:200px;object-fit:cover}
+    .filter-badge{cursor:pointer}
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#"><h1>PARA DS</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="accueil.html">Accueil</a></li>
+         <!--Soins-->
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="Soins" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Soins
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="hommeDropdown">
+            <li><a class="dropdown-item" href="#">Corp</a></li>
+            <li><a class="dropdown-item" href="#">Visage</a></li>
+            <li><a class="dropdown-item" href="#">Cheveux</a></li>
+          </ul>
+        </li>
+         <!--Maman&Bebe-->
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="Maman&BebeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Maman&Bebe
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="Maman&BebeDropdown">
+            <li><a class="dropdown-item" href="#">Toilette et soins de bébé</a></li>
+            <li><a class="dropdown-item" href="#">Trousse et cadeau bébé</a></li>
+            <li><a class="dropdown-item" href="#">Change de bébé</a></li>
+          </ul>
+        </li>
+         <!--Homme-->
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="hommeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Homme
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="hommeDropdown">
+             <li><a class="dropdown-item" href="produits.html?cat=homme">Tous les produits Homme</a></li>
+            <li><a class="dropdown-item" href="produits.html?cat=homme&tag=rassage">Rasage & Apré-rasage Homme</a></li>
+            <li><a class="dropdown-item" href="produits.html?cat=homme&tag=visage">Soins Visage</a></li>
+            <li><a class="dropdown-item" href="produits.html?cat=homme&tag=cheveux">Cheveux Homme</a></li>
+          </ul>
+        </li>
+
+
+
+  
+
+
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hygiène</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="produits.html?cat=hygiene">Tous Hygiène</a></li>
+            <li><a class="dropdown-item" href="produits.html?cat=hygiene&tag=savon">Savon</a></li>
+             <li><a class="dropdown-item" href="produits.html?cat=hygiene&tag=intime">Hygiène Intime</a></li>
+             <li><a class="dropdown-item" href="produits.html?cat=hygiene&tag=douche">Soins & Bain</a></li>
+            <li><a class="dropdown-item" href="produits.html?cat=hygiene&tag=deo">Déodorants et anti-transpirants</a></li>
+            <li><a class="dropdown-item" href="produits.html?cat=hygiene&tag=dentifrice">Soins buccodentaires</a></li>
+          </ul>
+        </li>
+
+       
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="bg-light border-bottom">
+  <div class="container py-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-2">
+        <li class="breadcrumb-item"><a href="accueil.html">Accueil</a></li>
+        <li class="breadcrumb-item active" id="bc-cat" aria-current="page">Produits</li>
+      </ol>
+    </nav>
+    <h1 class="h3 mb-0" id="page-title">Produits</h1>
+  </div>
+</header>
+
+<!-- Outils de filtre -->
+<section class="container py-4">
+  <div class="row g-3 align-items-center">
+    <div class="col-12 col-md-4">
+      <input id="q" class="form-control" type="search" placeholder="Rechercher un produit..." />
+    </div>
+    <div class="col-6 col-md-3">
+      <select id="sort" class="form-select">
+        <option value="">Trier</option>
+        <option value="price-asc">Prix: du - au +</option>
+        <option value="price-desc">Prix: du + au -</option>
+        <option value="name-asc">Nom A-Z</option>
+        <option value="name-desc">Nom Z-A</option>
+      </select>
+    </div>
+   
+  </div>
+</section>
+
+<!-- Grid produits -->
+<section class="container pb-5">
+  <div class="row g-4" id="grid">
+
+    <!-- نماذج منتجات (بدّل الصور والأسعار كما تحب) -->
+    <!-- Homme -->
+    <div class="col-6 col-md-4 col-lg-3 product" data-cat="homme" data-tags="soins_visage">
+      <div class="card h-100">
+        <img src="prod/cream.jpg" class="card-img-top" alt="">
+        <div class="card-body text-center">
+          <h6 class="card-title">Crème visage</h6>
+          <p class="mb-2 text-success fw-bold" data-price="79">79 DT</p>
+          <button class="btn btn-primary btn-sm">Acheter</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3 product" data-cat="homme" data-tags="cheveux">
+      <div class="card h-100">
+        <img src="prod/b1.jpg" class="card-img-top" alt="">
+        <div class="card-body text-center">
+          <h6 class="card-title">Shampoing</h6>
+          <p class="mb-2 text-success fw-bold" data-price="45">45 DT</p>
+          <button class="btn btn-primary btn-sm">Acheter</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3 product" data-cat="homme" data-tags="rassage">
+      <div class="card h-100">
+        <img src="prod/creme_rasage.webp" class="card-img-top" alt="">
+        <div class="card-body text-center">
+          <h6 class="card-title">creme rassage</h6>
+          <p class="mb-2 text-success fw-bold" data-price="13">13 DT</p>
+          <button class="btn btn-primary btn-sm">Acheter</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3 product" data-cat="homme" data-tags="rassage">
+      <div class="card h-100">
+        <img src="prod/rasoire.jpg" class="card-img-top" alt="">
+        <div class="card-body text-center">
+          <h6 class="card-title">rasoire</h6>
+          <p class="mb-2 text-success fw-bold" data-price="10">10 DT</p>
+          <button class="btn btn-primary btn-sm">Acheter</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3 product" data-cat="homme" data-tags="rassage">
+      <div class="card h-100">
+        <img src="prod/creme_rasage2.jpg" class="card-img-top" alt="">
+        <div class="card-body text-center">
+          <h6 class="card-title">creme rassage</h6>
+          <p class="mb-2 text-success fw-bold" data-price="27">27 DT</p>
+          <button class="btn btn-primary btn-sm">Acheter</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hygiène -->
+    <!--<div class$="col-6 col-md-4 col-lg-3 product" data-cat="hygiene" data-tags="douche">
+      <div class="card h-100">
+        <img src="prod/b5.jpg" class="card-img-top" alt="">
+        <div class="card-body text-center">
+          <h6 class="card-title">Gel Douche</h6>
+          <p class="mb-2 text-success fw-bold" data-price="19">19 DT</p>
+          <button class="btn btn-primary btn-sm">Acheter</button>
+        </div>
+      </div>
+    </div>-->
+    
+
+    <div class="col-6 col-md-4 col-lg-3 product" data-cat="hygiene" data-tags="deo">
+      <div class="card h-100">
+        <img src="prod/deo.jpg" class="card-img-top" alt="">
+        <div class="card-body text-center">
+          <h6 class="card-title">Déodorant Protect</h6>
+          <p class="mb-2 text-success fw-bold" data-price="14">14 DT</p>
+          <button class="btn btn-primary btn-sm">Acheter</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3 product" data-cat="hygiene" data-tags="deo">
+      <div class="card h-100">
+        <img src="prod/deo2.jpg" class="card-img-top" alt="">
+        <div class="card-body text-center">
+          <h6 class="card-title">Déodorant Protect</h6>
+          <p class="mb-2 text-success fw-bold" data-price="14">14 DT</p>
+          <button class="btn btn-primary btn-sm">Acheter</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3 product" data-cat="hygiene" data-tags="deo">
+      <div class="card h-100">
+        <img src="prod/deo3.jpg" class="card-img-top" alt="">
+        <div class="card-body text-center">
+          <h6 class="card-title">Déodorant Protect</h6>
+          <p class="mb-2 text-success fw-bold" data-price="14">14 DT</p>
+          <button class="btn btn-primary btn-sm">Acheter</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-6 col-md-4 col-lg-3 product" data-cat="hygiene" data-tags="dentifrice">
+      <div class="card h-100">
+        <img src="prod/dentfrice.jpg" class="card-img-top" alt="">
+        <div class="card-body text-center">
+          <h6 class="card-title">Dentifrice</h6>
+          <p class="mb-2 text-success fw-bold" data-price="12">12 DT</p>
+          <button class="btn btn-primary btn-sm">Acheter</button>
+        </div>
+      </div>
+    </div>
+
+  
+
+   
+  </div>
+  <div class="text-center mt-3 d-none" id="empty">Aucun produit trouvé.</div>
+</section>
+
+<footer class="bg-dark text-white text-center p-4">
+  <small>© PARA DS</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // helpers
+  const $ = (s, root=document)=>root.querySelector(s);
+  const $$ = (s, root=document)=>Array.from(root.querySelectorAll(s));
+
+  const params = new URLSearchParams(location.search);
+  const initialCat = (params.get('cat')||'').toLowerCase();
+  const initialTag = (params.get('tag')||'').toLowerCase();
+
+  const titleMap = {
+    'homme':'Produits Homme',
+    'hygiene':'Hygiène',
+    'chaussure':'Chaussures',
+    'bons-plans':'Bons Plans'
+  };
+
+  function setTitles(){
+    const t = titleMap[initialCat] || 'Tous les Produits';
+    $('#page-title').textContent = t;
+    $('#bc-cat').textContent = t;
+  }
+
+  function filterProducts(){
+    const q = $('#q').value.trim().toLowerCase();
+    const tagActive = $('.filter-badge.bg-secondary')?.dataset.tag || initialTag || '';
+    const cat = initialCat;
+
+    let any = false;
+    $$('.product').forEach(card=>{
+      const name = $('.card-title', card).textContent.toLowerCase();
+      const price = parseFloat($('.fw-bold', card).dataset.price);
+      const cardCat = card.dataset.cat.toLowerCase();
+      const cardTags = (card.dataset.tags||'').toLowerCase();
+
+      let ok = true;
+      if(cat) ok = ok && (cardCat === cat || (cat==='bons-plans' && cardCat==='bons-plans'));
+      if(q) ok = ok && name.includes(q);
+      if(tagActive) ok = ok && cardTags.includes(tagActive);
+
+      card.classList.toggle('d-none', !ok);
+      if(ok) any = true;
+    });
+    $('#empty').classList.toggle('d-none', any);
+  }
+
+  function sortProducts(){
+    const val = $('#sort').value;
+    const grid = $('#grid');
+    const cards = $$('.product').slice();
+
+    cards.sort((a,b)=>{
+      const nameA = $('.card-title', a).textContent.toLowerCase();
+      const nameB = $('.card-title', b).textContent.toLowerCase();
+      const priceA = parseFloat($('.fw-bold', a).dataset.price);
+      const priceB = parseFloat($('.fw-bold', b).dataset.price);
+
+      if(val==='price-asc') return priceA - priceB;
+      if(val==='price-desc') return priceB - priceA;
+      if(val==='name-asc') return nameA.localeCompare(nameB);
+      if(val==='name-desc') return nameB.localeCompare(nameA);
+      return 0;
+    });
+
+    cards.forEach(c=>grid.appendChild(c));
+  }
+
+  // badges click
+  $$('.filter-badge').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      $$('.filter-badge').forEach(x=>x.classList.remove('bg-secondary'));
+      b.classList.add('bg-secondary');
+      filterProducts();
+    });
+  });
+
+  // search + sort
+  $('#q').addEventListener('input', filterProducts);
+  $('#sort').addEventListener('change', ()=>{ sortProducts(); });
+
+  // init
+  setTitles();
+  // activate initial tag if provided
+  if(initialTag){
+    const badge = $(`.filter-badge[data-tag="${initialTag}"]`);
+    if(badge){ badge.classList.add('bg-secondary'); }
+  }else{
+    // default select "Tous"
+    $('.filter-badge[data-tag=""]').classList.add('bg-secondary');
+  }
+  filterProducts();
+  sortProducts();
+</script>
+<script>
+  let panier = [];
+
+  // نلقاو الكل boutons "Acheter"
+  document.querySelectorAll(".btn.btn-primary").forEach(btn => {
+    btn.addEventListener("click", function() {
+      const card = this.closest(".product");
+      const id = card.querySelector(".card-title").textContent; // اسم المنتج كـ ID
+      const price = parseFloat(card.querySelector(".fw-bold").dataset.price);
+
+      // نتحقق إذا موجود déjà
+      if (panier.find(p => p.id === id)) {
+        alert("✅ المنتج '" + id + "' موجود déjà في السلة");
+        return;
+      }
+
+      // إذا مش موجود نزيدو
+      panier.push({ id, price });
+      console.log(panier);
+      alert("🛒 تمت إضافة '" + id + "' إلى السلة");
+    });
+  });
+</script>
+
+</body>
+</html>
