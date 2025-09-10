@@ -27,7 +27,7 @@
             Soins
           </a>
           <ul class="dropdown-menu" aria-labelledby="hommeDropdown">
-            <li><a class="dropdown-item" href="#">Corp</a></li>
+            <li><a class="dropdown-item" href="#">Corps</a></li>
             <li><a class="dropdown-item" href="#">Visage</a></li>
             <li><a class="dropdown-item" href="#">Cheveux</a></li>
           </ul>
@@ -55,15 +55,13 @@
             <li><a class="dropdown-item" href="produits.html?cat=homme&tag=cheveux">Cheveux Homme</a></li>
           </ul>
         </li>
-
-
-
-  
-
-
         
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hygiène</a>
+         <!-- Hygiène -->
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="hygieneDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hygiène
+          </a>
+          
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="produits.html?cat=hygiene">Tous Hygiène</a></li>
             <li><a class="dropdown-item" href="produits.html?cat=hygiene&tag=savon">Savon</a></li>
@@ -73,6 +71,41 @@
             <li><a class="dropdown-item" href="produits.html?cat=hygiene&tag=dentifrice">Soins buccodentaires</a></li>
           </ul>
         </li>
+      
+       
+
+          <!-- Chaussure Orthopedique -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="chaussureDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Chaussure Orthopedique
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="chaussureDropdown">
+            <li><a class="dropdown-item" href="#">Baskets</a></li>
+            <li><a class="dropdown-item" href="#">Sandales</a></li>
+            <li><a class="dropdown-item" href="#">Sabot</a></li>
+          </ul>
+        </li>
+          <!--Orthopedie-->
+          <li class="=nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="orthopedieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Orthopedie
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="orthopedieDropdown">
+                <li><a class="dropdown-item" href="#">produit medical</a></li>
+                <li><a class="dropdown-item" href="#">Prothése</a></li>
+            </ul>
+          </li>
+          <!-- Panier -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+              🛒 Panier (<span id="cart-count">0</span>)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
 
        
         
@@ -111,6 +144,19 @@
 <!-- Grid produits -->
 <section class="container pb-5">
   <div class="row g-4" id="grid">
+
+ <!-- Soins -->
+    <div class="col-6 col-md-4 col-lg-3 product" data-cat="soins" data-tags="corps">
+      <div class="card h-100">
+        <img src="prod.jpg" class="card-img-top" alt="">
+        <div class="card-body text-center">
+          <h6 class="card-title">Créme pour le corps</h6>
+          <p class="mb-2 text-success fw-bold" data-price="79">79 DT</p>
+          <button class="btn btn-primary btn-sm">Acheter</button>
+        </div>
+      </div>
+    </div>
+
 
    
     <!-- Homme -->
@@ -212,6 +258,7 @@
     </div>
 
 
+
     <div class="col-6 col-md-4 col-lg-3 product" data-cat="hygiene" data-tags="dentifrice">
       <div class="card h-100">
         <img src="prod/dentfrice.jpg" class="card-img-top" alt="">
@@ -230,9 +277,15 @@
   <div class="text-center mt-3 d-none" id="empty">Aucun produit trouvé.</div>
 </section>
 
-<footer class="bg-dark text-white text-center p-4">
-  <small>© PARA DS</small>
-</footer>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center p-4">
+    <p>Suivez-nous :</p>
+    <a href="https://www.facebook.com/" class="text-white me-3">Facebook</a>
+    <a href="https://www.tiktok.com/explore" class="text-white me-3">TikTok</a>
+    <a href="https://www.instagram.com/" class="text-white">Instagram</a>
+    <footer >© 2025 PARA DS</footer>
+  </footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -327,29 +380,7 @@
   filterProducts();
   sortProducts();
 </script>
-<script>
-  let panier = [];
 
-  // نلقاو الكل boutons "Acheter"
-  document.querySelectorAll(".btn.btn-primary").forEach(btn => {
-    btn.addEventListener("click", function() {
-      const card = this.closest(".product");
-      const id = card.querySelector(".card-title").textContent; // اسم المنتج كـ ID
-      const price = parseFloat(card.querySelector(".fw-bold").dataset.price);
-
-      // نتحقق إذا موجود déjà
-      if (panier.find(p => p.id === id)) {
-        alert("✅ المنتج '" + id + "' موجود déjà في السلة");
-        return;
-      }
-
-      // إذا مش موجود نزيدو
-      panier.push({ id, price });
-      console.log(panier);
-      alert("🛒 تمت إضافة '" + id + "' إلى السلة");
-    });
-  });
-</script>
 
 </body>
 </html>
